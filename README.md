@@ -2,15 +2,11 @@
 
 A new Flutter project.
 
-## Getting Started
+Your task is to create a mobile application using Flutter that integrates with the ChatGPT API to provide conversational AI functionality to the users.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Here are the requirements for the assignment:
+1. The mobile application should have a very simple user interface that allows users to interact with the ChatGPT API.
+2. The ChatGPT API should be integrated with the mobile application to provide conversational AI functionality to the users.
+3. The application should have a feature that allows users to input text and get a response from the ChatGPT API.
+4. The source code of the application should be well organized, using best practices for Flutter development.
+5. Bonus points will be awarded for any additional features or functionality that you add to the application.
