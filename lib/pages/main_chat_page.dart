@@ -10,6 +10,8 @@ class MainChatPage extends StatefulWidget {
 class _MainChatPageState extends State<MainChatPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(),
+    );
   }
 }
