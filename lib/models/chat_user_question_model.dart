@@ -1,0 +1,3 @@
+class ChatUserQuestionModel {
+  String? messageContent;
+}
