@@ -10,3 +10,6 @@ Here are the requirements for the assignment:
 3. The application should have a feature that allows users to input text and get a response from the ChatGPT API.
 4. The source code of the application should be well organized, using best practices for Flutter development.
 5. Bonus points will be awarded for any additional features or functionality that you add to the application.
+
+IMPORTANT:
+YOU SHOULD PASTE YOUR PERSONAL CHATGPT API_KEY INSIDE THE .ENV FILE FOR IT TO WORK.
