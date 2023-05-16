@@ -175,6 +175,13 @@ class _MainChatPageState extends State<MainChatPage> {
       chatController.clear();
 
       await context.read<ChatCubit>().getChatGptAnswer(question: question);
+
+      final position = scrollController.position.maxScrollExtent;
+      scrollController.animateTo(
+        position,
+        duration: const Duration(seconds: 1),
+        curve: Curves.easeOut,
+      );
     }
   }
 }
