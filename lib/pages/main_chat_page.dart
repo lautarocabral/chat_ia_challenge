@@ -40,10 +40,12 @@ class _MainChatPageState extends State<MainChatPage> {
                 ChatGptStatus.incomplete) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: const Text(
-                    'An error ocurred',
-                    style: TextStyle(
-                        fontSize: 14.0, fontWeight: FontWeight.normal),
+                  content: Text(
+                    'An error ocurred \n ${context.read<ChatCubit>().state.errorMessage}',
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                   duration: const Duration(seconds: 5),
                   backgroundColor: Colors.red,

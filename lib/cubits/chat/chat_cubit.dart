@@ -37,8 +37,11 @@ class ChatCubit extends Cubit<ChatState> {
       chatGptResponseModel =
           ChatGptResponseModel.fromJson(jsonDecode(response.body));
       setChatGptResponse(chatGptResponseModel);
-    } else {
+    } else if (response.statusCode != 001) {
+      setErrorMessage(jsonDecode(response.body)['error']['message']);
       setChatGptStatus(ChatGptStatus.incomplete);
+    } else {
+      setErrorMessage(response.body);
     }
 
     return chatGptResponseModel;
@@ -79,5 +82,9 @@ class ChatCubit extends Cubit<ChatState> {
     emptyMessages.add(ChatMessageModel(
         messageContent: chatGptAnswer, messageType: 'receiver'));
     emit(state.copyWith(messages: emptyMessages));
+  }
+
+  void setErrorMessage(String error) {
+    emit(state.copyWith(errorMessage: error));
   }
 }

@@ -51,7 +51,7 @@ class ChatGptService {
       );
       return response;
     } catch (e) {
-      return Response(e.toString(), 500);
+      return Response(e.toString(), 001);
     }
   }
 }
