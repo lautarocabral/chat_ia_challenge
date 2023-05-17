@@ -47,6 +47,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final TextEditingController _apiKeyFieldController = TextEditingController();
+  String? codeDialog;
+  String? valueText;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _apiKeyFieldController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,6 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20,
             ),
             ElevatedButton(
+              onPressed: () => displayTextInputDialog(context),
+              child: const Text('SetApiKey'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/mainChatPage');
               },
@@ -80,5 +98,40 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  Future<void> displayTextInputDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text(
+              'Set your personal Api Key',
+              style: TextStyle(fontSize: 20),
+            ),
+            content: TextField(
+              onChanged: (value) {
+                setState(() {
+                  valueText = value;
+                });
+              },
+              controller: _apiKeyFieldController,
+              decoration: InputDecoration(hintText: "sk-lJvk..."),
+            ),
+            actions: <Widget>[
+              MaterialButton(
+                color: Colors.indigo,
+                textColor: Colors.white,
+                child: const Text('Ok'),
+                onPressed: () {
+                  setState(() {
+                    codeDialog = valueText;
+                    Navigator.pop(context);
+                  });
+                },
+              ),
+            ],
+          );
+        });
   }
 }
